@@ -39,11 +39,14 @@ const MemberPage = () => {
     return (
         <div className={styles.content}>
             <Card>
-                <CardHeader title="Jaime McCandless" subtitle="DEM: SR00218" />
-                <CardText>{'This is Jaime\'s page'}</CardText>
+                <CardHeader
+                    title="Jaime McCandless"
+                    subtitle="DEM: SR00218"
+                    avatar="http://0.gravatar.com/avatar/b7d2589d07b818eba5584c31c2f66a82"
+                />
             </Card>
             <Card>
-                <CardHeader title="Missions" subtitle="Soo many missions" />
+                <CardHeader title="Missions" subtitle="Sooo many missions" />
                 <Table>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                         <TableRow>
