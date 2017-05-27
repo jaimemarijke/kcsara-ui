@@ -1,0 +1,11 @@
+.content {
+    margin: 48px 72px;
+
+    >div {
+        margin-bottom: 32px;
+    }
+
+    @media(max-width: 640px) {
+        margin: 24px;
+    }
+}

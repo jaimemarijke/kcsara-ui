@@ -1,45 +1,6 @@
-.banner {
-    width: 60%;
-    margin: auto;
-    margin-top: 150px;
-}
-
-.headline {
-    font-size: 40px;
-    display: block;
-}
-
-.tagline {
+.content {
     font-size: 20px;
-    display: inline;
-}
-
-.datum {
-    display: inline-block;
-    margin-top: 50px;
-    font-size: 40px;
-}
-
-.number {
-    color: lightgreen;
-    display: inline;
-    font-size: 60px;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    font-size: 10px;
-}
-
-.button {
-    margin-top: 50px;
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    color: black;
-    background: lightgreen;
-    border: 0;
-    padding: 10px;
     display: block;
+    margin: 20px;
+    height: 100%;
 }

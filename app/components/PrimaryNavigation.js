@@ -1,14 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import { List, ListItem, makeSelectable } from 'material-ui/List';
+import { withRouter } from 'react-router-dom';
 
-export default class PrimaryNavigation extends React.Component {
+const SelectableList = makeSelectable(List);
+
+class PrimaryNavigation extends React.Component {
+    static propTypes = {
+        history: PropTypes.shape({
+            push: PropTypes.func.isRequired
+        }).isRequired,
+    }
+
     constructor(props) {
         super(props);
         this.state = {
             open: false
         };
+    }
+
+    onChangeList = (event, value) => {
+        this.props.history.push(value);
+        this.handleToggle();
     }
 
     handleToggle = () => this.setState({
@@ -22,14 +37,42 @@ export default class PrimaryNavigation extends React.Component {
                     title="King County Search and Rescue"
                     onTouchTap={this.handleToggle}
                 />
-                <Drawer open={this.state.open}>
+                <Drawer
+                    open={this.state.open}
+                >
                     <AppBar
+                        title="King County Search and Rescue"
                         onTouchTap={this.handleToggle}
                     />
-                    <MenuItem>Menu Item</MenuItem>
-                    <MenuItem>Menu Item 2</MenuItem>
+                    <SelectableList
+                        value={window.location.pathname}
+                        onChange={this.onChangeList}
+                    >
+                        <ListItem
+                            primaryText="Members"
+                            value="/members"
+                        />
+                        <ListItem
+                            primaryText="Missions"
+                            value="/missions"
+                        />
+                        <ListItem
+                            primaryText="Training"
+                            value="/training"
+                        />
+                        <ListItem
+                            primaryText="Units"
+                            value="/units"
+                        />
+                        <ListItem
+                            primaryText="Animals"
+                            value="/animals"
+                        />
+                    </SelectableList>
                 </Drawer>
             </div>
         );
     }
 }
+
+export default withRouter(PrimaryNavigation);
