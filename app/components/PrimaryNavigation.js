@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
+import IconButton from 'material-ui/IconButton';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import { withRouter } from 'react-router-dom';
 
@@ -41,8 +43,9 @@ class PrimaryNavigation extends React.Component {
                     open={this.state.open}
                 >
                     <AppBar
-                        title="King County Search and Rescue"
+                        title="Menu"
                         onTouchTap={this.handleToggle}
+                        iconElementLeft={<IconButton><NavigationClose /></IconButton>}
                     />
                     <SelectableList
                         value={window.location.pathname}
