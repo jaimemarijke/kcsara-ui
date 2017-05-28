@@ -228,7 +228,7 @@ const MemberPage = () => {
                 />
             </Card>
             <Card>
-                <CardHeader title="Missions" subtitle="Sooo many missions" />
+                <CardHeader title="Missions" subtitle="Missions Jaime has responded to" />
                 <MissionsTable missions={missions} />
             </Card>
         </div>
