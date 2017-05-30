@@ -10,7 +10,7 @@ import { applyMiddleware, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MembersPage from './components/MembersPage';
-import MemberPage from './components/MemberPage';
+import MemberPage from './containers/MemberPage';
 import PrimaryNavigation from './components/PrimaryNavigation';
 import '../scss/global.scss';
 
