@@ -16,7 +16,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaimemarijke/kcsara-ui"
+    "url": "https://github.com/kingcountysar/database-frontend"
   },
   "dependencies": {
     "fbjs": "^0.8.12",
@@ -32,9 +32,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "whatwg-fetch": "^2.0.1"
-  },
-  "devDependencies": {
+    "whatwg-fetch": "^2.0.1",
     "autoprefixer-loader": "^3.2.0",
     "babel": "^6.5.2",
     "babel-core": "^6.1",
