@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { applyMiddleware, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import AnimalsPage from './containers/AnimalsPage';
 import MembersPage from './components/MembersPage';
 import MemberPage from './containers/MemberPage';
 import PrimaryNavigation from './components/PrimaryNavigation';
@@ -26,6 +27,7 @@ const SiteRouter = () => (
                 <Route path="/" component={PrimaryNavigation} />
                 <Route exact path="/members" component={MembersPage} />
                 <Route exact path="/members/:memberId" component={MemberPage} />
+                <Route exact path="/animals" component={AnimalsPage} />
             </div>
         </BrowserRouter>
     </MuiThemeProvider>
