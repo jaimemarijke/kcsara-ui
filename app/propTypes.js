@@ -8,3 +8,8 @@ export const missionProp = PropTypes.shape({
     hours: PropTypes.number.isRequired,
     miles: PropTypes.number.isRequired,
 });
+
+export const animalProp = PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+});
