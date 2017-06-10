@@ -2,12 +2,7 @@ import React from 'react';
 
 import AnimalsPage from '../components/AnimalsPage';
 import { getAnimals } from '../api/animals';
-
-
-const transformAnimal = animal => ({
-    ...animal.attributes,
-    ...animal.relationships,
-});
+import { flattenAttributesAndRelationships } from '../jsonApi';
 
 
 class AnimalsPageContainer extends React.Component {
@@ -23,7 +18,7 @@ class AnimalsPageContainer extends React.Component {
         getAnimals().then(
             (response) => {
                 this.setState({
-                    animals: response.data.map(transformAnimal),
+                    animals: response.data.map(flattenAttributesAndRelationships),
                 });
             }
         );
