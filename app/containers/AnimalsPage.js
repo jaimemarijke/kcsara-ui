@@ -15,8 +15,8 @@ class AnimalsPageContainer extends React.Component {
 
     componentWillMount() {
         getAnimals().then(
-            (animals) => {
-                const transformedAnimals = animals.map(animal => animal.attributes);
+            (response) => {
+                const transformedAnimals = response.data.map(animal => animal.attributes);
                 this.setState({
                     animals: transformedAnimals
                 });
