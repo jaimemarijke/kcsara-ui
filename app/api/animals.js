@@ -8,7 +8,16 @@ const stubAnimalsResponse = {
             id: 1,
             attributes: {
                 name: 'Lassie',
-                type: 'Dog'
+                type: 'Dog',
+                status: 'Active',
+            },
+            relationships: {
+                owner: {
+                    data: {
+                        type: 'member',
+                        id: 'jaime',
+                    },
+                },
             },
         },
         {
@@ -16,7 +25,8 @@ const stubAnimalsResponse = {
             id: 1,
             attributes: {
                 name: 'Bessie',
-                type: 'Cow'
+                type: 'Cow',
+                status: 'Active',
             },
         },
     ]

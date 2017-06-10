@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
     Table,
@@ -11,12 +12,18 @@ import {
 
 import { animalProp } from '../propTypes';
 
-const AnimalsTableRow = ({ animal }) => (
-    <TableRow>
-        <TableRowColumn>{animal.name}</TableRowColumn>
-        <TableRowColumn>{animal.type}</TableRowColumn>
-    </TableRow>
-);
+const AnimalsTableRow = ({ animal }) => {
+    const { name, type, status, owner } = animal;
+
+    return (
+        <TableRow>
+            <TableRowColumn>{name}</TableRowColumn>
+            <TableRowColumn>{type}</TableRowColumn>
+            <TableRowColumn>{status}</TableRowColumn>
+            {owner && <TableRowColumn><Link to={`/members/${owner.data.id}`}>{animal.owner.data.id} </Link></TableRowColumn>}
+        </TableRow>
+    );
+};
 
 AnimalsTableRow.propTypes = {
     animal: animalProp.isRequired,
@@ -33,6 +40,8 @@ const AnimalsTable = ({ animals }) => {
                 <TableRow>
                     <TableHeaderColumn>Name</TableHeaderColumn>
                     <TableHeaderColumn>Type</TableHeaderColumn>
+                    <TableHeaderColumn>Status</TableHeaderColumn>
+                    <TableHeaderColumn>Owner</TableHeaderColumn>
                 </TableRow>
             </TableHeader>
             <TableBody displayRowCheckbox={false} showRowHover>

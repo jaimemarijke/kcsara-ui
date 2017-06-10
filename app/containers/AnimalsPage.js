@@ -4,6 +4,12 @@ import AnimalsPage from '../components/AnimalsPage';
 import { getAnimals } from '../api/animals';
 
 
+const transformAnimal = animal => ({
+    ...animal.attributes,
+    ...animal.relationships,
+});
+
+
 class AnimalsPageContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -16,9 +22,8 @@ class AnimalsPageContainer extends React.Component {
     componentWillMount() {
         getAnimals().then(
             (response) => {
-                const transformedAnimals = response.data.map(animal => animal.attributes);
                 this.setState({
-                    animals: transformedAnimals
+                    animals: response.data.map(transformAnimal),
                 });
             }
         );
