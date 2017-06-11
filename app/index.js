@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {
-    Route,
-    BrowserRouter,
-} from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import jsonApiData from './reducers/jsonApiData';
 import AnimalsPage from './containers/AnimalsPage';
 import MembersPage from './components/MembersPage';
 import MemberPage from './containers/MemberPage';
@@ -33,9 +31,12 @@ const SiteRouter = () => (
     </MuiThemeProvider>
 );
 
+const rootReducer = combineReducers({
+    jsonApiData,
+});
 
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
-const store = createStoreWithMiddleware(() => {}, {}, window.devToolsExtension && window.devToolsExtension());
+const store = createStoreWithMiddleware(rootReducer, {}, window.devToolsExtension && window.devToolsExtension());
 
 const App = (
     <Provider store={store}>

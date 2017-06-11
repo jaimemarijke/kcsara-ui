@@ -9,9 +9,15 @@ export const missionProp = PropTypes.shape({
     miles: PropTypes.number.isRequired,
 });
 
+export const memberProp = PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+});
+
 export const animalProp = PropTypes.shape({
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    owner: PropTypes.object,
+    owner: memberProp.isRequired,
 });

@@ -17,7 +17,11 @@ const AnimalsPage = ({ animals }) => (
 );
 
 AnimalsPage.propTypes = {
-    animals: PropTypes.arrayOf(animalProp).isRequired,
+    animals: PropTypes.arrayOf(animalProp),
+};
+
+AnimalsPage.defaultProps = {
+    animals: [],
 };
 
 export default AnimalsPage;

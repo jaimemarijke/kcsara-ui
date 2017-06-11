@@ -20,7 +20,7 @@ const AnimalsTableRow = ({ animal }) => {
             <TableRowColumn>{name}</TableRowColumn>
             <TableRowColumn>{type}</TableRowColumn>
             <TableRowColumn>{status}</TableRowColumn>
-            {owner && <TableRowColumn><Link to={`/members/${owner.data.id}`}>{owner.data.id} </Link></TableRowColumn>}
+            {owner && <TableRowColumn><Link to={`/members/${owner.id}`}>{owner.name} </Link></TableRowColumn>}
         </TableRow>
     );
 };

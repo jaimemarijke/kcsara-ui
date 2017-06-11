@@ -14,7 +14,7 @@ const stubAnimalsResponse = {
             relationships: {
                 owner: {
                     data: {
-                        type: 'member',
+                        type: 'members',
                         id: 'jaime',
                     },
                 },
@@ -22,14 +22,40 @@ const stubAnimalsResponse = {
         },
         {
             type: 'animals',
-            id: 1,
+            id: 2,
             attributes: {
                 name: 'Bessie',
                 type: 'Cow',
                 status: 'Active',
             },
+            relationships: {
+                owner: {
+                    data: {
+                        type: 'members',
+                        id: 'jason',
+                    },
+                },
+            },
         },
-    ]
+    ],
+    included: [
+        {
+            type: 'members',
+            id: 'jaime',
+            attributes: {
+                name: 'Jaime McCandless',
+                status: 'Active',
+            },
+        },
+        {
+            type: 'members',
+            id: 'jason',
+            attributes: {
+                name: 'Jason Curtis',
+                status: 'Active',
+            },
+        }
+    ],
 };
 
 export function getAnimals() {
